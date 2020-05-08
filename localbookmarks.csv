@@ -1,0 +1,3 @@
+Group (optional),Name (required),Globe (optional),Lat (required if globe),Lon (required if globe),Altitude (optional if globe),x (required if not globe),y (required if not globe),z (required if not globe),Scale (optional),LineWidth (optional)
+Stars,Betelgeuse,,,,,-104.9264,-37.7492,-17.5786,4.00E+14,,,,,
+,Acroplis,Earth,37.9715,23.7257,,,,,,,,,,
