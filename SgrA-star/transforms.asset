@@ -1,0 +1,23 @@
+local assetHelper = asset.require('util/asset_helper')
+local transforms = asset.require('scene/solarsystem/sun/transforms')
+asset.require("spice/base")
+
+
+local SagaStarCenter = {
+    Identifier = "SagaStarCenter",
+    Parent = transforms.SolarSystemBarycenter.Identifier,
+    Transform = {
+        Translation = {
+            Type = "StaticTranslation",
+            Position = { 2.4255E20, -2.36195E17, -1.94838E17}
+            --Position = {0,0,0}
+        }
+    },
+    GUI = {
+        Name = "SagaStar Center",
+        Path = "/Milky Way/SgrA*",
+        Hidden = true
+    }
+}
+
+assetHelper.registerSceneGraphNodesAndExport(asset, {SagaStarCenter})

@@ -1,0 +1,98 @@
+local assetHelper = asset.require('util/asset_helper')
+local transforms = asset.require("scene/solarsystem/sun/transforms")
+local transforms = asset.require('./transforms')
+
+--function that reads the file
+
+local getStars = function (guiPath, sgrAstarsfile)
+  local genStars = {};
+  --skip the first line
+  local notFirstLine = false;
+
+  for line in io.lines(openspace.absPath(sgrAstarsfile)) do
+      if (notFirstLine) then
+        -- describes the data
+        local matchstring = '(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-)$'
+        local group, name, _eccentricity, _semimajoraxis, _inclination, _ascendingnode, _argumentofperiapsis, _meananomaly, _epoch, _period = line:match(matchstring)
+
+        group = (group == '' and globe or group)
+
+        local aStar = {
+          Identifier = name,
+          Parent = transforms.SagaStarCenter.Identifier,
+          Transform = {
+              Translation = {
+                  Type = "KeplerTranslation",
+                  Eccentricity = tonumber(_eccentricity),
+                  SemiMajorAxis = tonumber(_semimajoraxis),
+                  Inclination = tonumber(_inclination),
+                  AscendingNode = tonumber(_ascendingnode),
+                  ArgumentOfPeriapsis = tonumber(_argumentofperiapsis),
+                  MeanAnomaly = 0.0,
+                  Epoch = _epoch,
+                  Period = tonumber(_period);
+                  }
+            },
+            Renderable = {
+                Type = "RenderableGlobe",
+                Radii = 6.957E12,
+                SegmentsPerPatch = 64,
+                PerformShading = false,
+                Layers = {
+                ColorLayers = {
+                      {
+                        Identifier = "Texture",
+                        FilePath = asset.localResource("addons/SgrA-star/textures/white.png"),
+                        Enabled = true
+                      }
+                    }
+                  }
+                },
+            Tag = { "Sga", "star" },
+            GUI = {
+                Name = name,
+                Path = "/Milky Way/SgrA*/"..name
+            }
+        }
+
+
+        table.insert(genStars, aStar);
+
+
+        local aTrail = {
+            Identifier = name .. "Trail",
+            Parent = transforms.SagaStarCenter.Identifier,
+            Renderable = {
+                Type = "RenderableTrailOrbit",
+                Translation = {
+                    Type = "KeplerTranslation",
+                    Eccentricity = tonumber(_eccentricity),
+                    SemiMajorAxis = tonumber(_semimajoraxis),
+                    Inclination = tonumber(_inclination),
+                    AscendingNode = tonumber(_ascendingnode),
+                    ArgumentOfPeriapsis = tonumber(_argumentofperiapsis),
+                    MeanAnomaly = 0.0,
+                    Epoch =  _epoch,
+                    Period = tonumber(_period);
+                },
+
+                Color = {0.905, 0.935, 0.935 },
+                Period = tonumber(_period)/86400,
+                Resolution = 500,
+                Tag = { "starTrail", "starTrail_sga" }
+            },
+            GUI = {
+                Name = name .. "-trail",
+                Path = "/Milky Way/SgrA*/"..name
+            }
+        }
+        table.insert(genStars, aTrail);
+
+      else
+        notFirstLine = true
+      end
+  end
+  return genStars
+end
+
+asset.export('getStars', getStars)

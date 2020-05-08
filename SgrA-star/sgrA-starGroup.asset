@@ -1,0 +1,19 @@
+local assetHelper = asset.require('util/asset_helper')
+local SgrAstarHelper = asset.require('addons/SgrA-star/generate_stars')
+
+local starOrbitsCSV = asset.localResource('data/sgrastar_data.csv')
+
+local nodes = {}
+
+asset.onInitialize(function ()
+  nodes = SgrAstarHelper.getStars('Sgr A*', starOrbitsCSV)
+  for _, n in ipairs(nodes) do
+    openspace.addSceneGraphNode(n);
+  end
+end)
+
+asset.onDeinitialize(function ()
+  for _, n in ipairs(nodes) do
+    openspace.removeSceneGraphNode(n.Identifier);
+  end
+end)

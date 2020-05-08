@@ -1,0 +1,4 @@
+local assetHelper = asset.require('util/asset_helper')
+
+asset.require('addons/SgrA-star/SgrA-bh')
+asset.require('addons/SgrA-star/SgrA-starGroup')

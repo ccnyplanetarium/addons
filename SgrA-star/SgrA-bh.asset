@@ -1,0 +1,44 @@
+--local transforms = asset.require('scene/solarsystem/sun/transforms')
+local assetHelper = asset.require('util/asset_helper')
+local transforms = asset.require('addons/SgrA-star/transforms')
+
+
+local SagaStar = {
+    Identifier = "SagaStar",
+    Parent = transforms.SagaStarCenter.Identifier,
+    Transform = {
+        Translation = {
+            Type = "StaticTranslation",
+            Position = { 0,0,0}
+        },
+        Scale = {
+            Type = "StaticScale",
+            Scale = 1.0
+        }
+    },
+    Renderable = {
+        Type = "RenderableGlobe",
+        Radii = 84179000.7,
+        SegmentsPerPatch = 64,
+        PerformShading = false,
+        Layers = {
+        ColorLayers = {
+            {
+                Identifier = "Texture",
+                FilePath = asset.localResource("textures/black.png"),
+                Enabled = true
+            }
+        }
+        },
+
+        },
+    Tag = { "SgrA*", "BlackHole" },
+    GUI = {
+        Name = "The Black Hole at the Center",
+        Path = "/Milky Way/SgrA*"
+    }
+}
+
+
+
+assetHelper.registerSceneGraphNodesAndExport(asset, { SagaStar })
