@@ -4,6 +4,6 @@ Using data from this [paper](https://arxiv.org/abs/1611.09144), we can add some 
 
 TODO:
 
--Check orientation of the system w.r.t to the milky way.
--Add more stars (currently 4)
--Maybe make them more star like?
+* Check orientation of the system w.r.t to the milky way.
+* Add more stars (currently 4)
+* Maybe make them more star like?

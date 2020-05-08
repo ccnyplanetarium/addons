@@ -7,5 +7,6 @@ Included is a sample speck file of just the first 10,000 rows from the data set.
 The full data set of galaxy coordinates is available [here](https://wwwmpa.mpa-garching.mpg.de/galform/agnpaper/). It contains 9474168 galaxies which will create a speck file of about 400 Mb.
 
 TODO:
--make a color map by mass
--work on darkmatter halo
+
+* make a color map by mass
+* work on darkmatter halo
