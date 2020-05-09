@@ -15,4 +15,4 @@ A script to import galaxy coordinates from the Millennium Simulation results
 
 An asset importer for the SgrA* system
 
-![SgrA*](example-images/sgrstar.jpg)
+![SgrA*](example-images/sgrastar.jpg)
