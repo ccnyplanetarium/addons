@@ -1,0 +1,26 @@
+local assetHelper = asset.require('util/asset_helper')
+local sunTransforms = asset.require('scene/solarsystem/sun/transforms')
+
+local models = asset.localResource('model')
+
+local partsInfo = {
+{ "tesla-body", "textures/redtex.jpg", true },
+{ "tesla-glass", "textures/blueglasstex.jpg", true },
+{ "tesla-chassis", "textures/blacktex.jpg", true },
+{ "tesla-trim", "textures/graytex.jpg", true },
+}
+
+asset.export("registerTesla", function (asset, parentNodeIdentifier)
+    local parts = {}
+    for i, info in ipairs(partsInfo) do
+        parts[#parts + 1] = assetHelper.createModelPart(
+            parentNodeIdentifier,
+            sunTransforms.SolarSystemBarycenter.Identifier,
+            models,
+            info[1],
+            info[2],
+            info[3]
+        )
+    end
+    assetHelper.registerSceneGraphNodesAndExport(asset, parts)
+end)
