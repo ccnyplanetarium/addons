@@ -11,7 +11,7 @@ The Trappist Planetary system
 
 A model (obj) for the tesla roadster
 
-![tesla roadster model](teslaroadser/screenshots/teslaroadster.jpg)
+![tesla roadster model](teslaroadster/screenshots/teslaroadster.jpg)
 
 A script to import galaxy coordinates from the Millennium Simulation results
 
