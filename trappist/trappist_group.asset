@@ -1,0 +1,25 @@
+local assetHelper = asset.require('util/asset_helper')
+--The generate_planets_model script brings the planets in a sphere.obj so we can declare the light source as the trappist star
+local trappistHelper = asset.require('./generate_planets_model')
+
+--This script renders them as RenderableGlobes, which can't handle non solar light sources (yet)
+--https://github.com/OpenSpace/OpenSpace/issues/921
+
+--local trappistHelper = asset.require('./generate_planets')
+
+local planetOrbitsCSV = asset.localResource('data/trappist_data.csv')
+
+local nodes = {}
+
+asset.onInitialize(function ()
+  nodes = trappistHelper.getPlanets('Trappist System', planetOrbitsCSV)
+  for _, n in ipairs(nodes) do
+    openspace.addSceneGraphNode(n);
+  end
+end)
+
+asset.onDeinitialize(function ()
+  for _, n in ipairs(nodes) do
+    openspace.removeSceneGraphNode(n.Identifier);
+  end
+end)

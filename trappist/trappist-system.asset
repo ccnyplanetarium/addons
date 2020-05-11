@@ -1,0 +1,4 @@
+local assetHelper = asset.require('util/asset_helper')
+
+asset.require('addons/trappist/trappist_star')
+asset.require('addons/trappist/trappist_group')

@@ -1,0 +1,68 @@
+local assetHelper = asset.require('util/asset_helper')
+local transforms = asset.require('./transforms')
+
+
+local Trappist_1A = {
+    Identifier = "Trappist_1A",
+    Parent = transforms.TrappistCenter.Identifier,
+    Transform = {
+        Translation = {
+            Type = "StaticTranslation",
+            Position = { 0,0,0}
+        },
+        Scale = {
+            Type = "StaticScale",
+            Scale = 1.0
+        }
+    },
+    Renderable = {
+        Type = "RenderableGlobe",
+        Radii = 84179000.7,
+        SegmentsPerPatch = 64,
+        PerformShading = false,
+        Layers = {
+        ColorLayers = {
+            {
+                Identifier = "Texture",
+                FilePath = asset.localResource('textures/red_dwarf.jpg'),
+                Enabled = true
+            }
+        }
+        },
+
+        },
+    Tag = { "planet_exoSystem", "star" },
+    GUI = {
+        Name = 'Trappist 1A - (star)',
+        Path = '/Milky Way/Trappist'
+    }
+}
+
+local Trappist1Glare = {
+    Identifier = "Trappist1Glare",
+    Parent = transforms.TrappistCenter.Identifier,
+    Renderable = {
+        Type = "RenderablePlaneImageLocal",
+        Size = 1.3*10^9.5,
+        Origin = "Center",
+        Opacity = 0.190000,
+        Billboard = true,
+        Texture = asset.localResource('textures/halo_reddish.png'),
+        BlendMode = "Additive",
+        RenderableType = "Transparent"
+    },
+    Transform = {
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "SUN",
+            Observer = "SSB"
+        }
+    },
+    GUI = {
+        Name = "Trappist 1 Glare",
+        Path = "/Milky Way/Trappist"
+    }
+}
+
+
+assetHelper.registerSceneGraphNodesAndExport(asset, { Trappist_1A, Trappist1Glare })

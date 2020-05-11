@@ -1,0 +1,23 @@
+local assetHelper = asset.require('util/asset_helper')
+local transforms = asset.require('scene/solarsystem/sun/transforms')
+asset.require("spice/base")
+
+
+local TrappistCenter = {
+    Identifier = "TrappistCenter",
+    Parent = transforms.SolarSystemBarycenter.Identifier,
+    Transform = {
+        Translation = {
+            Type = "StaticTranslation",
+            Position = { 7.11879E16, 1.92575E17, -3.11896E17}
+            --Position = {0,0,0}
+        }
+    },
+    GUI = {
+        Name = "Trappist Center",
+        Path = "/Milky Way/Trappist",
+        Hidden = true
+    }
+}
+
+assetHelper.registerSceneGraphNodesAndExport(asset, {TrappistCenter})
