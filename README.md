@@ -24,3 +24,17 @@ Included are:
 ### An asset importer for the SgrA* system
 
 <img src="SgrA-star/screenshots/sgrastar.jpg" width="40%">
+
+## Instructions
+
+I put the entire `addons` folder directly under the `data/assets` directory. Then in your `.scene` file, just include the lines:
+
+```
+asset.request('addons/constellations/constellation_art')
+asset.request('addons/millennium-simulation/millennium')
+asset.request('addons/SgrA-star/SgrA-star-system')
+asset.request('addons/trappist/trappist-system')
+asset.request('addons/teslaroadster/tesla_roadster.asset')
+```
+
+for each asset you would like to incorporate.
