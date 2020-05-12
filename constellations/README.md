@@ -8,7 +8,7 @@ This asset reads a csv file to determine the texture and position for each const
 
 By default they are off, but can be turned on using the gui or Lua commands.
 
-<img src="screenshots/constellation-art-sample-23.jpg" width="60%">
+<img src="screenshots/constellation-art-sample-3.jpg" width="60%">
 
 To turn them all on or off:
 
