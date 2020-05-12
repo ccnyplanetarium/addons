@@ -5,24 +5,22 @@ Some extra assets for OpenSpace
 
 Included are:
 
-The Trappist Planetary system
+### The Trappist Planetary system
 
-![trappist overview](trappist/screenshots/trappistsystem.jpg)
+<img src="trappist/screenshots/trappistsystem.jpg" width="40%">
 
-The zodiac constellations Art
+### The zodiac constellations Art
 
-![constellation art](constellations/screenshots/constellation-art-sample.jpg)
+<img src="constellations/screenshots/constellation-art-sample.jpg" width="40%">
 
-A model (obj) for the tesla roadster
+### A model (obj) for the tesla roadster
 
-![tesla roadster model](teslaroadster/screenshots/teslaroadster.jpg)
+<img src="teslaroadster/screenshots/teslaroadster.jpg" width="40%">
 
-A script to import galaxy coordinates from the Millennium Simulation results
+### A script to import galaxy coordinates from the Millennium Simulation results
 
-![millenniumsimulation](millennium-simulation/screenshots/millenniumsimulation.jpg)
+<img src="millennium-simulation/screenshots/millenniumsimulation.jpg" width="40%">
 
-An asset importer for the SgrA* system
+### An asset importer for the SgrA* system
 
 <img src="SgrA-star/screenshots/sgrastar.jpg" width="40%">
-
-<!-- ![SgrA*](SgrA-star/screenshots/sgrastar.jpg) -->
