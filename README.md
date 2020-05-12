@@ -23,4 +23,6 @@ A script to import galaxy coordinates from the Millennium Simulation results
 
 An asset importer for the SgrA* system
 
-![SgrA*](SgrA-star/screenshots/sgrastar.jpg)
+<img src="SgrA-star/screenshots/sgrastar.jpg" width="40%">
+
+<!-- ![SgrA*](SgrA-star/screenshots/sgrastar.jpg) -->
