@@ -1,0 +1,14 @@
+Data about Constellations columns are: group, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar
+normal,Orion, -104.9264,-37.7492,-17.5786, 1,orion-outline-blue-glow.png,1.278407,1.1284,1.668407,Betelguese
+zodiac,Taurus,-18.7277,-0.3175,-6.9092,1.2,taurus-white-glow.png,1.198407,0.908407,1.378407,Aldebran
+zodiac,Aries,-13.2892,9.4519,-11.9378,0.8,aries-white-glow.png,0.668407,0.538407,0.518407,Hamal
+zodiac,Gemini,-362.5493,-102.2245,79.4030,0.85,gemini-white-glow.png,-0.731593,2.268407,-0.451593,Mekbuda
+zodiac,Cancer,-30.9209,-16.4584,22.6601,0.800000,cancer-white-glow.png,-1.151593,1.888407,-1.041593,HD74442
+zodiac,Leo,-17.9030,-13.2719,31.4196,1.330000,leo-white-glow.png,-0.131593,2.448407,0.418407,HD89484
+zodiac,Virgo,36.5809,-35.1877,62.3341,1.50000,virgo-white-glow.png,-0.371593,3.138407,0.518407,HD116658
+zodiac,Libra,17.5393,-6.2768,14.5916,1.0000,libra-white-glow.png,-1.011593,3.138407,1.318407,HD130819
+zodiac,Scorpius,137.4378,-19.4456,37.3606,1.2000,scorpius-white-glow.png,1.698407,-1.001593,-1.751593,HD148478
+zodiac,Sagittarius,66.2304,11.1498,-14.8095,1.2000,sagittarius-white-glow.png,1.728407,-1.321593,-1.751593,HD175191
+zodiac,Capricorn,32.9799,20.0621,-29.3945,1.3000,capricorn-white-glow.png,1.158407,-0.881593,-0.561593,HD200761
+zodiac,Aquarius,86.5090,149.4078,-155.8102,1.2000,aquarius-white-glow.png,-2.921593,-2.391593,-2.551593,-2.511593
+zodiac,Pisces,-28.0235,45.3150,-76.8893,1.6000,pisces-white-glow.png,0.458407,-0.001593,0.618407,HD4656

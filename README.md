@@ -9,6 +9,10 @@ The Trappist Planetary system
 
 ![trappist overview](trappist/screenshots/trappistsystem.jpg)
 
+The zodiac constellations Art
+
+![constellation art](constellations/screenshots/constellation-art-sample.jpg)
+
 A model (obj) for the tesla roadster
 
 ![tesla roadster model](teslaroadster/screenshots/teslaroadster.jpg)
