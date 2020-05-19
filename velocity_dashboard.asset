@@ -1,0 +1,18 @@
+local assetHelper = asset.require('util/asset_helper')
+
+
+assetHelper.registerDashboardItems(asset, {
+    {
+        Type = "DashboardItemVelocity",
+        Identifier = "velocityDashboard",
+        FontSize = 20,
+        GuiName = "anchorname",
+
+    }
+
+
+})
+
+--asset.onInitialize(function ()
+    --openspace.setPropertyValueSingle("Dashboard.StartPositionOffset", {930.0,-515.0})
+--end)
