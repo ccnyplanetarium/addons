@@ -47,7 +47,7 @@ local getConstellations = function (guiPath, constellationfile)
               Billboard = false,
               Texture = asset.localResource('addons/constellations/constellation-art/' .. imageName ..''),
               BlendMode = "Additive",
-              Opacity = 0.5
+              Opacity = 0.3
           },
           Tag = { "ConstellationArtImage", group },
           GUI = {
