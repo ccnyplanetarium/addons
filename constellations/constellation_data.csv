@@ -2,7 +2,7 @@ Data about Constellations columns are: group, name, x, y, z, scale, imageName, r
 normal,Orion,-550.8742,-259.3621,-188.9620,1.5,Ori.png,1.128407,1.058407,1.668407,HD37128
 zodiac,Taurus,-18.7277,-0.3175,-6.9092,1.2,taurus-white-glow.png,1.198407,0.908407,1.378407,Aldebran
 zodiac,Aries,-13.2892,9.4519,-11.9378,0.8,Ari.png,0.668407,0.538407,0.518407,Hamal
-zodiac,Gemini,-362.5493,-102.2245,79.4030,0.85,gemini-white-glow.png,-0.731593,2.268407,-0.451593,Mekbuda
+zodiac,Gemini,-362.5493,-102.2245,79.4030,0.85,Gem.png,-0.731593,2.268407,-0.451593,Mekbuda
 zodiac,Cancer,-30.9209,-16.4584,22.6601,0.8,cancer-white-glow.png,-1.151593,1.888407,-1.041593,HD74442
 zodiac,Leo,-17.9030,-13.2719,31.4196,1.33,Leo.png,-0.131593,2.448407,0.418407,HD89484
 zodiac,Virgo,36.5809,-35.1877,62.3341,1.5,Vir.png,-0.371593,3.138407,0.518407,HD116658
