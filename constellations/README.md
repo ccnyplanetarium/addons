@@ -27,6 +27,14 @@ openspace.setPropertyValue("{zodiac}.Renderable.Enabled",true)
 <img src="screenshots/orion_gemini.jpg" width="60%">
 <img src="screenshots/virgo.jpg" width="60%">
 
+<video controls width="512">
+
+    <source src="screenshots/rotate.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
 TODO:
 
 General improvements of drawings.

@@ -10,8 +10,8 @@ local getConstellations = function (guiPath, constellationfile)
   -- define parsec to meters
   local PARSEC_CONSTANT = 3.0856776E16;
   -- how many parsecs away do you want the images to be?
-  local distanceMultiplier = 100;
-  local baseScale = 1e18;
+  local distanceMultiplier = 3.2;
+  local baseScale = 1e17;
   for line in io.lines(openspace.absPath(constellationfile)) do
       if (notFirstLine) then
         -- describes the data
@@ -41,7 +41,7 @@ local getConstellations = function (guiPath, constellationfile)
           },
           Renderable = {
               Type = "RenderablePlaneImageLocal",
-              Size = tonumber(baseScale*scale*distanceMultiplier/100),
+              Size = tonumber(baseScale*scale*distanceMultiplier/10),
               Enabled = true,
               Origin = "Center",
               Billboard = false,
