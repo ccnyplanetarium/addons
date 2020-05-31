@@ -9,7 +9,7 @@ Included are:
 
 <img src="trappist/screenshots/trappistsystem.jpg" width="40%">
 
-### The zodiac constellations Art
+### Constellations Art
 
 <img src="constellations/screenshots/constellation-art-sample.jpg" width="40%">
 
