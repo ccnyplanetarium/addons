@@ -10,6 +10,8 @@ local getConstellations = function (guiPath, constellationfile)
   -- define parsec to meters
   local PARSEC_CONSTANT = 3.0856776E16;
   -- how many parsecs away do you want the images to be?
+  -- this setting puts the billboards at the location of the constellation bounds grid from DU.
+  -- but they can really be anywhere since the billboard size will scale with distance.
   local distanceMultiplier = 3.2;
   local baseScale = 1e17;
   for line in io.lines(openspace.absPath(constellationfile)) do
