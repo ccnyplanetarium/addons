@@ -17,8 +17,8 @@ local getConstellations = function (guiPath, constellationfile)
   for line in io.lines(openspace.absPath(constellationfile)) do
       if (notFirstLine) then
         -- describes the data
-        local matchstring = '(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-)$'
-        local group, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar = line:match(matchstring)
+        local matchstring = '(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-),(.-)$'
+        local group, abbreviation, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar = line:match(matchstring)
         local magVec = math.sqrt(x*x+y*y+z*z)
         local normx = x/magVec
         local normy = y/magVec
@@ -49,7 +49,7 @@ local getConstellations = function (guiPath, constellationfile)
               Billboard = false,
               Texture = asset.localResource('addons/constellations/constellation-art/' .. imageName ..''),
               BlendMode = "Additive",
-              Opacity = 0.3
+              Opacity = 0.1
           },
           Tag = { "ConstellationArtImage", group },
           GUI = {
