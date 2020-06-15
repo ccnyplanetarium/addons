@@ -1,5 +1,5 @@
 Data about Constellations columns are: group, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar
-normal,Ori,Orion,-550.8742,-259.3621,-188.9620,1.5,Ori.png,1.128407,1.058407,1.668407,HD37128
+equatorial,Ori,Orion,-550.8742,-259.3621,-188.9620,1.7,Ori.png,1.128407,1.058407,1.668407,HD37128
 zodiac,Tau,Taurus,-18.7277,-0.3175,-6.9092,1.2,Tau.png,1.198407,0.908407,1.378407,Aldebran
 zodiac,Ari,Aries,-13.2892,9.4519,-11.9378,0.8,Ari.png,0.668407,0.538407,0.518407,Hamal
 zodiac,Gem,Gemini,-362.5493,-102.2245,79.4030,0.85,Gem.png,-0.731593,2.268407,-0.451593,Mekbuda
@@ -26,8 +26,8 @@ southern,Phe,Phoenix,5.0172,-4.2096,-22.8088,1.5,Phe.png,-3.141593,3.138407,-3.1
 northern,Cyg,Cygnus,78.7445,375.2440,12.4995,1.4,Cyg.png,1.668407,-0.931593,-0.261593,HD194093
 southern,Cen,Centaurus,20.1398,-33.1830,9.5915,2.7,Cen.png,-1.291593,3.088407,0.458407,HD110304
 northern,Aur,Auriga,-12.3062,3.8595,1.0302,1.5,Aur.png,1.378407,1.108407,1.178407,HD34029
-northern,Peg,Pegasus,0.9791,32.5947,-27.7339,2.42,Peg.png,0.918407,-0.221593,-0.191593,HD218045
-southern,Hya,Hydra,-2.9043,-33.5496,25.8962,3,Hya.png,-0.531593,2.838407,0.368407,HD93813
+northern,Peg,Pegasus,0.9791,32.5947,-27.7339,2.1,Peg.png,0.918407,-0.221593,-0.191593,HD218045
+equatorial,Hya,Hydra,-2.9043,-33.5496,25.8962,3,Hya.png,-0.531593,2.838407,0.368407,HD93813
 southern,Oct,Octans,22.0434,-27.8601,-24.3108,1.0,Oct.png,-0.911593,0.398407,1.198407,HD214846
 southern,Nor,Norma,34.9251,-17.5643,0.0068,1.0,Nor.png,-1.631593,-2.421593,1.298407,HD146686
 southern,Mus,Musca,48.8888,-79.2952,-10.2828,1.25,Mus.png,-1.871593,3.138407,0.358407,HD109668
