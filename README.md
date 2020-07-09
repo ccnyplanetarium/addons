@@ -9,6 +9,10 @@ Included are:
 
 <img src="trappist/screenshots/trappistsystem.jpg" width="40%">
 
+### Constellations Art
+
+<img src="constellations/screenshots/constellation-art-sample.jpg" width="40%">
+
 ### A model (obj) for the tesla roadster
 
 <img src="teslaroadster/screenshots/teslaroadster.jpg" width="40%">
@@ -26,6 +30,7 @@ Included are:
 I put the entire `addons` folder directly under the `data/assets` directory. Then in your `.scene` file, just include the lines:
 
 ```
+asset.request('addons/constellations/constellation_art')
 asset.request('addons/millennium-simulation/millennium')
 asset.request('addons/SgrA-star/SgrA-star-system')
 asset.request('addons/trappist/trappist-system')
