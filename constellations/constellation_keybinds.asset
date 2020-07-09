@@ -6,7 +6,7 @@ local Keybindings = {
     Name = "Show Constellation Art",
     Command = "openspace.setPropertyValue('Scene.Constellation Art*.Renderable.Opacity', 0);" ..
     "openspace.setPropertyValue('Scene.Constellation Art*.Renderable.Enabled', true);" ..
-    "openspace.setPropertyValue('Scene.Constellation Art*.Renderable.Opacity', 0.1, 2);",
+    "openspace.setPropertyValue('Scene.Constellation Art*.Renderable.Opacity', 0.2, 2);",
     Documentation = "Enables and fades up constellation art work",
     GuiPath = "/Rendering",
     Local = false
@@ -26,7 +26,25 @@ local Keybindings = {
     Documentation = "Disable constellation artwork",
     GuiPath = "/Rendering",
     Local = false
-  }
+  },
+  {
+    Key = "v",
+    Name = "Show Constellation Art",
+    Command = "openspace.setPropertyValue('Scene.Constellation Art*.Renderable.Opacity', 0);" ..
+    "openspace.setPropertyValue('{zodiac}.Renderable.Enabled',true);" ..
+    "openspace.setPropertyValue('{zodiac}.Renderable.Opacity', 1, 2);",
+    Documentation = "Enables and fades up zodiac art work",
+    GuiPath = "/Rendering",
+    Local = false
+  },
+  {
+    Key = "Shift+v",
+    Name = "Show Constellation Art",
+    Command =  "openspace.setPropertyValue('{zodiac}.Renderable.Opacity', 0, 2);",
+    Documentation = "fades down zodiac art work",
+    GuiPath = "/Rendering",
+    Local = false
+  },
 }
 
 asset.onInitialize(function ()

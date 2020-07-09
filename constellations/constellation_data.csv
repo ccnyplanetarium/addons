@@ -1,4 +1,4 @@
-Data about Constellations columns are: group, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar
+Data about Constellations columns are: group, IAUabbreviation, name, x, y, z, scale, imageName, rotX, rotY, rotZ, centerStar
 equatorial,Ori,Orion,-550.8742,-259.3621,-188.9620,1.7,Ori.png,1.128407,1.058407,1.668407,HD37128
 zodiac,Tau,Taurus,-18.7277,-0.3175,-6.9092,1.2,Tau.png,1.198407,0.908407,1.378407,Aldebran
 zodiac,Ari,Aries,-13.2892,9.4519,-11.9378,0.8,Ari.png,0.668407,0.538407,0.518407,Hamal
