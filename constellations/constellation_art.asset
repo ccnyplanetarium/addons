@@ -11,7 +11,7 @@ local localimages = asset.localResource("constellation-art")
 local datafile = asset.localResource("constellation_data.csv")
 
 --function that reads the file
-local createConstellations = function (guiPath, constellationfile)
+local createConstellations = function (baseIdentifier, guiPath, constellationfile)
   local genConstellations = {};
   --skip the first line
   local notFirstLine = false;
@@ -35,7 +35,7 @@ local createConstellations = function (guiPath, constellationfile)
         group = (group == '' and globe or group)
 
         local aconstellation = {
-          Identifier = guiPath .. '-' .. name,
+          Identifier = baseIdentifier .. '-' .. abbreviation,
           Parent = transforms.SolarSystemBarycenter.Identifier,
           Transform = {
               Translation = {
@@ -85,7 +85,7 @@ local nodes = {}
 asset.onInitialize(function ()
   local constellationsCSV = images .. "/constellation_data.csv"
 
-  nodes = createConstellations('Constellation Art', datafile)
+  nodes = createConstellations('ConstellationArt', 'Constellation Art', datafile)
   for _, n in ipairs(nodes) do
     openspace.addSceneGraphNode(n);
   end
