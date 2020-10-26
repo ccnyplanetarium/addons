@@ -3,7 +3,7 @@ local transforms = asset.require("scene/solarsystem/sun/transforms")
 
 --function that reads the file
 
-local getConstellations = function (guiPath, constellationfile)
+local getConstellations = function (baseIdentifier, guiPath, constellationfile)
   local genConstellations = {};
   --skip the first line
   local notFirstLine = false;
@@ -27,7 +27,7 @@ local getConstellations = function (guiPath, constellationfile)
         group = (group == '' and globe or group)
 
         local aconstellation = {
-          Identifier = guiPath .. '-' .. name,
+          Identifier = baseIdentifier .. '-' .. abbreviation,
           Parent = transforms.SolarSystemBarycenter.Identifier,
           Transform = {
               Translation = {
