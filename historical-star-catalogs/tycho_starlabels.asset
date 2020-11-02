@@ -1,0 +1,39 @@
+local assetHelper = asset.require('util/asset_helper')
+
+
+
+local tychoLabelFile = asset.localResource('tycho_labels.label')
+
+local object = {
+    Identifier = "TychoStarsLabels",
+    Renderable = {
+        Type = "RenderableBillboardsCloud",
+        Enabled = true,
+        Color = { 1.0, 1.0, 1.0 },
+        Opacity = 0.65,
+        LabelFile = tychoLabelFile,
+        TextColor = { 0.4, 0.4, 0.4, 1.0 },
+        DrawLabels = true,
+        TextSize = 12.7,
+        TextMinSize = 6.0,
+        TextMaxSize = 50.0,
+        Unit = "pc"
+    },
+    GUI = {
+        Name = "Tycho Stars Labels",
+        Path = "/Milky Way/Historical Star Catalogs"
+    }
+}
+
+
+
+assetHelper.registerSceneGraphNodesAndExport(asset, { object })
+
+asset.meta = {
+    Name = "Tycho/Kepler Star Catalogs",
+    Version = "1.0",
+    Description = "Imports of Early Star Catalogs",
+    Author = "James Hedberg",
+    URL = "https://ccnyplanetarium.org",
+    License = "MIT license"
+}

@@ -1,0 +1,48 @@
+local assetHelper = asset.require('util/asset_helper')
+
+
+
+local textures = asset.syncedResource({
+    Name = "Stars Textures",
+    Type = "HttpSynchronization",
+    Identifier = "stars_textures",
+    Version = 1
+})
+
+local colorLUT = asset.syncedResource({
+    Name = "Stars Color Table",
+    Type = "HttpSynchronization",
+    Identifier = "stars_colormap",
+    Version = 2
+})
+
+local speck = asset.localResource('tycho.speck')
+
+local stars = {
+    Identifier = "TychoStars",
+    Renderable = {
+        Type = "RenderableStars",
+        File = speck,
+        Texture = textures .. "/halo.png",
+        ColorMap = colorLUT .. "/colorbv.cmap",
+        MagnitudeExponent = 6.26,
+        SizeComposition = "Distance Modulus",
+        RenderMethod = "Texture Based" -- or PSF
+    },
+
+    GUI = {
+        Path = "/Milky Way/Historical Star Catalogs"
+    }
+}
+
+
+assetHelper.registerSceneGraphNodesAndExport(asset, { stars })
+
+asset.meta = {
+    Name = "Tycho/Kepler Star Catalogs",
+    Version = "1.0",
+    Description = "Imports of Early Star Catalogs",
+    Author = "James Hedberg",
+    URL = "https://ccnyplanetarium.org",
+    License = "MIT license"
+}

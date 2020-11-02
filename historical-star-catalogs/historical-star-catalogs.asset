@@ -1,0 +1,14 @@
+
+asset.require('./almagest-stars-as-stars')
+asset.require('./almagest_starlabels')
+asset.require('./tycho-stars-as-stars')
+asset.require('./tycho_starlabels')
+
+asset.meta = {
+    Name = "Historical Star Catalogs",
+    Version = "1.0",
+    Description = "Imports of Early Star Catalogs",
+    Author = "James Hedberg",
+    URL = "https://ccnyplanetarium.org",
+    License = "MIT license"
+}

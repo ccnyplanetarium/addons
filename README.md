@@ -25,6 +25,10 @@ Included are:
 
 <img src="SgrA-star/screenshots/sgrastar.jpg" width="40%">
 
+### Historical Star Catalogs
+
+<img src="hisotrical-star-catalogs/screenshots/almagest-stars.jpg" width="40%">
+
 ## Instructions
 
 I put the entire `addons` folder directly under the `data/assets` directory. Then in your `.scene` file, just include the lines:
