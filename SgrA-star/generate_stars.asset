@@ -24,30 +24,40 @@ local getStars = function (guiPath, sgrAstarsfile)
               Translation = {
                   Type = "KeplerTranslation",
                   Eccentricity = tonumber(_eccentricity),
-                  SemiMajorAxis = tonumber(_semimajoraxis),
+                  SemiMajorAxis = tonumber(_semimajoraxis)*1.17567E12,
                   Inclination = tonumber(_inclination),
                   AscendingNode = tonumber(_ascendingnode),
                   ArgumentOfPeriapsis = tonumber(_argumentofperiapsis),
                   MeanAnomaly = 0.0,
                   Epoch = _epoch,
-                  Period = tonumber(_period);
+                  Period = tonumber(_period)*3.154E7;
                   }
             },
+            --Renderable = {
+            --    Type = "RenderableGlobe",
+            --    Radii = 6.957E12,
+            --    SegmentsPerPatch = 64,
+            --    PerformShading = false,
+            --    Layers = {
+            --    ColorLayers = {
+            --          {
+            --            Identifier = "Texture",
+            --            FilePath = asset.localResource("addons-dev/SgrA-star/textures/white.png"),
+            --            Enabled = true
+            --          }
+            --        }
+            --      }
+            --    },
             Renderable = {
-                Type = "RenderableGlobe",
-                Radii = 6.957E12,
-                SegmentsPerPatch = 64,
-                PerformShading = false,
-                Layers = {
-                ColorLayers = {
-                      {
-                        Identifier = "Texture",
-                        FilePath = asset.localResource("addons/SgrA-star/textures/white.png"),
-                        Enabled = true
-                      }
-                    }
-                  }
-                },
+            Type = "RenderablePlaneImageLocal",
+            Enabled = true,
+            Size = 1.0E13,
+            Origin = "Center",
+            Billboard = true,
+            Texture = asset.localResource('addons-dev/SgrA-star/textures/star_fuzzy.png'),
+            BlendMode = "Additive"
+            },
+
             Tag = { "Sga", "star" },
             GUI = {
                 Name = name,
@@ -67,17 +77,17 @@ local getStars = function (guiPath, sgrAstarsfile)
                 Translation = {
                     Type = "KeplerTranslation",
                     Eccentricity = tonumber(_eccentricity),
-                    SemiMajorAxis = tonumber(_semimajoraxis),
+                    SemiMajorAxis = tonumber(_semimajoraxis)*1.17567E12,
                     Inclination = tonumber(_inclination),
                     AscendingNode = tonumber(_ascendingnode),
                     ArgumentOfPeriapsis = tonumber(_argumentofperiapsis),
                     MeanAnomaly = 0.0,
                     Epoch =  _epoch,
-                    Period = tonumber(_period);
+                    Period = tonumber(_period)*3.154E7;
                 },
 
                 Color = {0.905, 0.935, 0.935 },
-                Period = tonumber(_period)/86400,
+                Period = tonumber(_period)*3.154E7/86400,
                 Resolution = 500,
                 Tag = { "starTrail", "starTrail_sga" }
             },

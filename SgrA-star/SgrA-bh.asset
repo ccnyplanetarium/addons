@@ -1,6 +1,6 @@
 --local transforms = asset.require('scene/solarsystem/sun/transforms')
 local assetHelper = asset.require('util/asset_helper')
-local transforms = asset.require('addons/SgrA-star/transforms')
+local transforms = asset.require('addons-dev/SgrA-star/transforms')
 
 
 local SagaStar = {
