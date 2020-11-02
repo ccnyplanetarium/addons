@@ -2,6 +2,9 @@
 
 Adds two star catalogs from Ptolemy and Tycho Brahe/Kepler using RenderableStars.
 
+
+![Comparison](screenshots/comparison-image.jpg)
+
 Data processed and coordinates converted using the enclosed astropy scripts.
 
 Equinox for Ptolemy is chosen as 58 AD
