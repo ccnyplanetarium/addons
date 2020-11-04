@@ -8,6 +8,7 @@ Created on Sun Nov 1 10:41 2020
 
 import pandas as pd
 import numpy as np
+
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 from astropy.coordinates import Latitude, Longitude  # Angles
@@ -17,6 +18,7 @@ from astropy.coordinates import Latitude, Longitude  # Angles
 filename = 'keplere.dat'
 lines=[]
 labellines=[]
+brightnessFixed = 0.0
 #get the number of rows (if you want to skip some during import)
 def sum1forline(filename):
     with open(filename) as f:
@@ -29,24 +31,59 @@ print('number of rows: ' + str(nRows))
 #define the rows to skip
 skip = np.arange(nRows)
 skip = np.delete(skip, np.arange(0, nRows, 5))
+#setup the widths of the columns
+widths = [
+    5, #Sequence number in Manuscript Catalogue
+    4, #Sequence number in Brahe 1602 edition
+    4, #Sequence number in Kepler 1627 edition
+    4, #Sequence number of constellation in Kepler
+    1, #[=]
+    4, #Abbreviation of constellation name
+    3, #Sequence number of star in constellation
+    3, #[1,12] Zodiacal sign of ecliptic longitude
+    3, #[0,30] Degrees of ecliptic longitude
+    5, #Arcminutes of ecliptic longitude
+    3, #Degrees of ecliptic latitude
+    5, #Arcminutes of ecliptic latitude
+    2, #[AB] Sign of ecliptic latitude
+    1, #Magnitude as given by Brahe; 9 for `nebulous'
+    1, #[.:] Magnitude qualifier
+    8, #? Hipparcos number of identification
+    2, #[1,6] Quality of identification
+    
+]
 
+#read in the fixed width file using the defined widths
 
-data = pd.read_csv(filename, sep='\s+', header=None, nrows = 1006)
+data = pd.read_fwf(filename, header=None, widths=widths, nrows = 1006)
+print(data)
 
 for index, row in data.iterrows():
-    #print(index);
+    print(index);
     
     #set -1 for latitude if in the australis hemisphere (A)
     
-    if row[11] == 'A':
+    if row[12] == 'A':
         signLat = -1
     else :
         signLat = 1
+        
+    brightness = str(row[13])
+    #print(row[12])
 
-    # Longitudes are measured as degrees from a zodic sign, which is in column [6] of the data
+    #account for brightness modifier, if '.' then make a little dimmer, if ':' then make a little brighter
+    if row[14] == '.' :
+        brightnessFixed = float(brightness)+.3
+    elif row[14] == ':' :
+        brightnessFixed = float(brightness)-.3
+    else :
+        brightnessFixed = float(brightness)
+    #brightnessFixed = brightness.translate(None, string.punctuation)
+
+    # Longitudes are measured as degrees from a zodic sign, which is in column [7] of the data
     
-    ra = Longitude(((row[6]-1)*30+row[7],row[8]), unit=u.deg)
-    dec = Latitude((signLat*row[9],row[10]), unit=u.deg)
+    ra = Longitude(((row[7]-1)*30+row[8],row[9]), unit=u.deg)
+    dec = Latitude((signLat*row[10],row[11]), unit=u.deg)
     
     #The Equinox of 1601 is chosen for the Tycho Data Set.
     
@@ -56,14 +93,14 @@ for index, row in data.iterrows():
           str(object.galactic.cartesian.y.value)+" "+ \
           str(object.galactic.cartesian.z.value)+" "+ \
           str(.5)+" "+\
-          str(row[12])+" "+\
-          str(row[12])+" "+\
-          str(row[12])+" "
+          str(brightnessFixed)+" "+\
+          str(brightnessFixed)+" "+\
+          str(brightnessFixed)+" "
     
     astarLabel = " "+str(object.galactic.cartesian.x.value)+" "+ \
           str(object.galactic.cartesian.y.value)+" "+ \
           str(object.galactic.cartesian.z.value)+" "+ \
-          "text "+str(row[4])+"-"+str(row[13])+" "
+          "text "+str(row[5])+"-"+str(row[6])+" "
           
     lines.append(astar)
     labellines.append(astarLabel)
