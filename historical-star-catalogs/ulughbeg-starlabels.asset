@@ -2,16 +2,16 @@ local assetHelper = asset.require('util/asset_helper')
 
 
 
-local almagestLabelFile = asset.localResource('ulughbeg_labels.label')
+local LabelFile = asset.localResource('ulughbeg_labels.label')
 
 local object = {
-    Identifier = "AlmagestStarsLabels",
+    Identifier = "UlughBegStarLabels",
     Renderable = {
         Type = "RenderableBillboardsCloud",
         Enabled = true,
         Color = { 1.0, 1.0, 1.0 },
         Opacity = 0.65,
-        LabelFile = almagestLabelFile,
+        LabelFile = LabelFile,
         TextColor = { 0.4, 0.4, 0.4, 1.0 },
         DrawLabels = true,
         TextSize = 12.7,
@@ -20,7 +20,7 @@ local object = {
         Unit = "pc"
     },
     GUI = {
-        Name = "Almagest Stars Labels",
+        Name = "Ulugh Beg Stars Labels",
         Path = "/Milky Way/Historical Star Catalogs"
     }
 }
@@ -30,7 +30,7 @@ local object = {
 assetHelper.registerSceneGraphNodesAndExport(asset, { object })
 
 asset.meta = {
-    Name = "Almagest Star Catalog",
+    Name = "Ulugh Beg Star Catalog",
     Version = "1.0",
     Description = "Imports of Early Star Catalogs",
     Author = "James Hedberg",

@@ -2,7 +2,7 @@ local assetHelper = asset.require('util/asset_helper')
 
 
 
-local tychoLabelFile = asset.localResource('tycho_labels.label')
+local LabelFile = asset.localResource('tycho_labels.label')
 
 local object = {
     Identifier = "TychoStarsLabels",
@@ -11,7 +11,7 @@ local object = {
         Enabled = true,
         Color = { 1.0, 1.0, 1.0 },
         Opacity = 0.65,
-        LabelFile = tychoLabelFile,
+        LabelFile = LabelFile,
         TextColor = { 0.4, 0.4, 0.4, 1.0 },
         DrawLabels = true,
         TextSize = 12.7,

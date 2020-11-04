@@ -1,10 +1,10 @@
 
-asset.require('./almagest-stars-as-stars')
-asset.require('./almagest_starlabels')
+asset.require('./ptolemy-stars-as-stars')
+asset.require('./ptolemy-starlabels')
 asset.require('./ulughbeg-stars-as-stars')
-asset.require('./ulughbeg_starlabels')
+asset.require('./ulughbeg-starlabels')
 asset.require('./tycho-stars-as-stars')
-asset.require('./tycho_starlabels')
+asset.require('./tycho-starlabels')
 
 asset.meta = {
     Name = "Historical Star Catalogs",

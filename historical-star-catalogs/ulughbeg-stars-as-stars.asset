@@ -21,7 +21,7 @@ local speck = asset.localResource('ulughbeg.speck')
 
 
 local stars = {
-    Identifier = "AlmagestStars",
+    Identifier = "UlughBegStars",
     Renderable = {
         Type = "RenderableStars",
         File = speck,
@@ -42,7 +42,7 @@ local stars = {
 assetHelper.registerSceneGraphNodesAndExport(asset, { stars })
 
 asset.meta = {
-    Name = "Almagest Star Catalog",
+    Name = "Ulugh Beg Star Catalog",
     Version = "1.0",
     Description = "Imports of Early Star Catalogs",
     Author = "James Hedberg",
