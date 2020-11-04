@@ -15,7 +15,7 @@ from astropy.coordinates import Latitude, Longitude  # Angles
 
 #data set can be found here: https://www.aanda.org/articles/aa/abs/2010/08/aa14002-10/aa14002-10.html
 
-filename = 'keplere.dat'
+filename = 'ulughbeg.dat'
 lines=[]
 labellines=[]
 brightnessFixed = 0.0
@@ -33,29 +33,30 @@ skip = np.arange(nRows)
 skip = np.delete(skip, np.arange(0, nRows, 5))
 #setup the widths of the columns as described here: http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/J/A+A/516/A28?format=html&tex=true
 widths = [
-    5, #Sequence number in Manuscript Catalogue
-    4, #Sequence number in Brahe 1602 edition
-    4, #Sequence number in Kepler 1627 edition
-    4, #Sequence number of constellation in Kepler
-    1, #[=]
-    4, #Abbreviation of constellation name
-    3, #Sequence number of star in constellation
-    3, #[1,12] Zodiacal sign of ecliptic longitude
-    3, #[0,30] Degrees of ecliptic longitude
-    5, #Arcminutes of ecliptic longitude
-    3, #Degrees of ecliptic latitude
-    5, #Arcminutes of ecliptic latitude
-    2, #[AB] Sign of ecliptic latitude
-    1, #Magnitude as given by Brahe; 9 for `nebulous'
-    1, #[.:] Magnitude qualifier
-    8, #? Hipparcos number of identification
-    2, #[1,6] Quality of identification
+    4, # 0 Sequence number in Ptolemaios Catalogue
+    1, # 1'c' when the position is derived from Ptolemaios via al-Sufi
+    5, # 2 Corresponding sequence number of in Ptolemaios
+    4, # 3 Sequence number of constellation
+    2, # 4 =
+    3, # 5 Abbreviation of constellation name
+    3, # 6 Sequence number of star in constellation
+    1, # 7 'a' for star outside the constellation figure
+    4, # 8 [0/11] Zodiacal sign of longitude
+    3, # 9 [0/30] Longitude (degrees)
+    3, # 10 [0/59] Longitude (arcmin) 
+    5, # 11 [0/90] Ecliptic latitude (degrees)
+    3, # 12 [0/60] Ecliptic latitude (arcmin)
+    2, # 13 [A/B] Sign of latitude
+    3, # 14 Magnitude as given by Ulugh Beg
+    1, # 15 [bf] brighter/fainter qualifier by Ulugh Beg
+    7, # 16 Hipparcos number of identification
+    2, # 17 [1,6] Quality of identification
     
 ]
 
 #read in the fixed width file using the defined widths
 
-data = pd.read_fwf(filename, header=None, widths=widths, nrows = 1006)
+data = pd.read_fwf(filename, header=None, widths=widths, nrows = 1016)
 print(data)
 
 for index, row in data.iterrows():
@@ -63,18 +64,18 @@ for index, row in data.iterrows():
     
     #set -1 for latitude if in the australis hemisphere (A)
     
-    if row[12] == 'A':
+    if row[13] == 'A':
         signLat = -1
     else :
         signLat = 1
         
-    brightness = str(row[13])
+    brightness = str(row[14])
     #print(row[12])
 
     #account for brightness modifier, if '.' then make a little dimmer, if ':' then make a little brighter
-    if row[14] == '.' :
+    if row[15] == 'f' :
         brightnessFixed = float(brightness)+.3
-    elif row[14] == ':' :
+    elif row[15] == 'b' :
         brightnessFixed = float(brightness)-.3
     else :
         brightnessFixed = float(brightness)
@@ -82,12 +83,12 @@ for index, row in data.iterrows():
 
     # Longitudes are measured as degrees from a zodic sign, which is in column [7] of the data
     
-    ra = Longitude(((row[7]-1)*30+row[8],row[9]), unit=u.deg)
-    dec = Latitude((signLat*row[10],row[11]), unit=u.deg)
+    ra = Longitude(((row[8])*30+row[9],row[10]), unit=u.deg)
+    dec = Latitude((signLat*row[11],row[12]), unit=u.deg)
     
     #The Equinox of 1601 is chosen for the Tycho Data Set.
     
-    object = SkyCoord(ra,dec,distance=10*u.pc, frame='geocentrictrueecliptic', equinox='+01601-01-01T12:00:00.0')
+    object = SkyCoord(ra,dec,distance=10*u.pc, frame='geocentrictrueecliptic', equinox='+01437-01-01T12:00:00.0')
 
     astar = " "+str(object.galactic.cartesian.x.value)+" "+ \
           str(object.galactic.cartesian.y.value)+" "+ \
@@ -108,14 +109,14 @@ for index, row in data.iterrows():
 
 # save the speck files for the stars and labels
 
-afile = open('tycho.speck', 'w')
+afile = open('ulughbeg.speck', 'w')
 afile.write("datavar 0 colorb_v \n"+"datavar 1 lum \n"+"datavar 2 absmag \n"+"datavar 3 appmag \n")
 for line in lines:
     afile.write("%s\n" % line)
 
 afile.close()
 
-afile2 = open('tycho_labels.label', 'w')
+afile2 = open('ulughbeg_labels.label', 'w')
 afile2.write("textcolor 1 \n")
 for line in labellines:
     afile2.write("%s\n" % line)

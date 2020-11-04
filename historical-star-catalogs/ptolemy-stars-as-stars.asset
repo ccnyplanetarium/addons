@@ -16,7 +16,7 @@ local colorLUT = asset.syncedResource({
     Version = 2
 })
 
-local speck = asset.localResource('almagest_10pc.speck')
+local speck = asset.localResource('ptolemy.speck')
 
 
 

@@ -1,6 +1,8 @@
 
 asset.require('./almagest-stars-as-stars')
 asset.require('./almagest_starlabels')
+asset.require('./ulughbeg-stars-as-stars')
+asset.require('./ulughbeg_starlabels')
 asset.require('./tycho-stars-as-stars')
 asset.require('./tycho_starlabels')
 
