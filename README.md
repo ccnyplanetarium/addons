@@ -27,7 +27,7 @@ Included are:
 
 ### Historical Star Catalogs
 
-<img src="histrical-star-catalogs/screenshots/allfourstarcatalogs.gif" width="40%">
+<img src="historical-star-catalogs/screenshots/allfourstarcatalogs.gif" width="40%">
 
 ## Instructions
 
