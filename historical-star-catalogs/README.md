@@ -1,14 +1,17 @@
 # Historical Star Catalogs
 
-Adds two star catalogs from Ptolemy, Ulugh Beg, and Tycho Brahe/Kepler using RenderableStars.
+Adds three star catalogs from: Ptolemy, Ulugh Beg, and Tycho Brahe/Kepler using RenderableStars.
 
+### All three star catalogs (plus the modern Hipparcos Survey)
 
 ![Comparison](screenshots/comparison-image.jpg)
 
 Data processed and coordinates converted using the enclosed astropy scripts.
 
 Equinox for Ptolemy is chosen as 58 AD
+
 Equinox for Ulugh Beg is 1437
+
 Equinox for Tycho is chosen as 1601 AD
 
 Distances to stars were set at 10pc (completely arbitrary)
@@ -38,5 +41,9 @@ asset.require('addons/historical-star-catalogs/ulughbeg-starlabels')
 asset.request('addons/historical-star-catalogs/tycho-stars-as-stars')
 asset.request('addons/historical-star-catalogs/tycho_starlabels')
 ```
+
+### Frames showing each data set around Orion
 ![Animation](screenshots/allfourstarcatalogs.gif)
+
+### The Almagest Stars on the Celestial Sphere
 ![Almagest As Sphere](screenshots/almagest-stars.jpg)
